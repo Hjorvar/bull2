@@ -1,0 +1,18 @@
+#container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#goblinImage {
+  float: left;
+  width: 40%;
+  height: auto;
+}
+
+#text {
+  float: right;
+  width: 35%;
+  border-radius: 10px;
+  background-color: lightblue;
+  margin-left: -20px;
+}
