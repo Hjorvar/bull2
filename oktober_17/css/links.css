@@ -1,0 +1,48 @@
+/* Set the container to use flexbox layout */
+.linkContainer {
+  display: flex;
+  /* Set the direction of the flex items to be in a row */
+  flex-direction: row;
+  /* Set the font size of the text inside the container */
+  font-size: 30px;
+  /* Center the text horizontally */
+  text-align: center;
+}
+
+/* Set the styles for the left item */
+.itemLeft {
+  /* Set the background color of the left item */
+  background-color: #f1f1f1;
+  /* Add padding to the left item */
+  padding: 10px;
+  /* Set the width of the left item to be 33% of the container */
+  flex: 33%;
+}
+
+/* Set the styles for the right item */
+.itemRight {
+  /* Set the background color of the right item */
+  background-color: dodgerblue;
+  /* Add padding to the right item */
+  padding: 10px;
+  /* Set the width of the right item to be 33% of the container */
+  flex: 33%;
+}
+
+/* Set the styles for the right item */
+.itemMiddle {
+  /* Set the background color of the middle item */
+  background-color: green;
+  /* Add padding to the middle item */
+  padding: 10px;
+  /* Set the width of the right item to be 33% of the container */
+  flex: 33%;
+}
+
+/* Set a media query for screens with a maximum width of 800px */
+@media (max-width: 800px) {
+  /* Change the direction of the flex items to be in a column */
+  .linkContainer {
+    flex-direction: column;
+  }
+}
