@@ -1,0 +1,53 @@
+/* Assigning the grid area 'header' to the class 'item1' */
+.item1 { grid-area: header; }
+
+/* Assigning the grid area 'menu' to the class 'item2' */
+.item2 { grid-area: menu; }
+
+/* Assigning the grid area 'main' to the class 'item3' */
+.item3 { grid-area: main; }
+
+/* Assigning the grid area 'right' to the class 'item4' */
+.item4 { grid-area: right; }
+
+/* Assigning the grid area 'footer' to the class 'item5' */
+.item5 { grid-area: footer; }
+
+.item6 { grid-area: middle;}
+
+/* Setting up the grid container */
+.grid-container {
+  /* Enabling grid display */
+  display: grid;
+
+  /* Defining the grid template areas */
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu middle middle middle right right'
+    'menu footer footer footer footer footer';
+
+  /* Setting the gap between grid items */
+  gap: 10px;
+
+  /* Setting the background color of the grid container */
+  background-color: #2196F3;
+
+  /* Adding padding to the grid container */
+  padding: 10px;
+}
+
+/* Styling the direct child div elements of the grid container */
+.grid-container > div {
+  /* Setting the background color of the div elements */
+  background-color: rgba(255, 255, 255, 0.8);
+
+  /* Aligning the text to the center */
+  text-align: center;
+
+  /* Adding padding to the top and bottom of the div elements */
+  padding: 20px 0;
+
+  /* Setting the font size of the text */
+  font-size: 30px;
+}

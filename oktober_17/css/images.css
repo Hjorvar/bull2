@@ -1,4 +1,8 @@
-/* Set the container to use flexbox layout */
+/* Set the container to use flexbox layout
+    and center the content horizontally and vertically
+    inside the container
+    
+*/
 .container {
   display: flex;
   /* Center the container horizontally */
