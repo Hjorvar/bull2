@@ -15,6 +15,8 @@
 
 .item6 { grid-area: middle;}
 
+.item7 { grid-area: bottom;}
+
 /* Setting up the grid container */
 .grid-container {
   /* Enabling grid display */
@@ -25,7 +27,9 @@
     'header header header header header header'
     'menu main main main right right'
     'menu middle middle middle right right'
-    'menu footer footer footer footer footer';
+    'menu middle middle middle right right'
+    'menu footer footer footer footer footer'
+    'bottom bottom bottom bottom bottom bottom';
 
   /* Setting the gap between grid items */
   gap: 10px;
