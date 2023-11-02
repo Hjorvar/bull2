@@ -1,0 +1,20 @@
+/* Selecting the element with id "container" */
+#container {
+  /* Setting the display property to grid to create a grid container */
+  display: grid;
+
+  /* Defining the columns of the grid with 3 equal fractions of the grid container */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* Defining the rows of the grid with 10 rows each having a minimum height of 100px and a maximum height that adjusts to its content */
+  grid-template-rows: repeat(4, minmax(150px, auto));
+
+  /* Setting the gap between grid cells to 10px */
+  grid-gap: 10px;
+
+  /* Setting the maximum width of the grid container to 960px */
+  max-width: 960px;
+
+  /* Centering the grid container horizontally */
+  margin: 0 auto;
+}

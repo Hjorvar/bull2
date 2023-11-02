@@ -1,0 +1,17 @@
+/* Selects the element with the id of "container" */
+#container {
+  /* Sets the display property to grid, enabling grid layout */
+  display: grid;
+
+  /* Defines the size of three columns: the first and third are 1 fraction of the available space, the second is 2 fractions */
+  /* grid-template-columns: 1fr 2fr 1fr; */
+
+  /* Alternative way to define columns: all three columns would be the same size */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* Sets the maximum width of the container to 960 pixels */
+  max-width: 960px;
+
+  /* Centers the container by setting the left and right margins to auto */
+  margin: 0 auto;
+}

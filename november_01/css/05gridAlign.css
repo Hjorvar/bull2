@@ -1,0 +1,29 @@
+/* Define a container with a grid display */
+#container {
+  display: grid; /* Use CSS Grid Layout */
+  grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
+  grid-template-rows: repeat(4, minmax(100px, auto)); /* Create 4 rows, each with a minimum height of 100px and a maximum height that fits the content */
+  grid-gap: 10px; /* Set the gap between grid cells to 10px */
+  max-width: 960px; /* Set the maximum width of the container to 960px */
+  margin: 0 auto; /* Center the container horizontally */
+  /*
+  align-items: stretch; /* Stretch the grid items to fill the entire row height */
+  /*
+  justify-items: end; /* Align the grid items to the right side of the grid cells */ 
+  
+}
+
+#item01 {
+  justify-self: end; /* Align the grid item to the right side of the grid cell */
+  align-self: end;
+}
+
+#item02 {
+  justify-self: center; /* Align the grid item to the center of the grid cell */
+  align-self: center;
+}
+
+#item03 {
+  justify-self: start; /* Align the grid item to the left side of the grid cell */
+  align-self: start;
+}

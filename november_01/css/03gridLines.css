@@ -1,0 +1,34 @@
+/* Define a container with a grid display */
+#container {
+  display: grid; /* Use CSS Grid Layout */
+  grid-template-columns: repeat(10, 1fr); /* Create 10 equal-width columns */
+  grid-template-rows: repeat(5, minmax(100px, auto)); /* Create 4 rows, each with a minimum height of 100px and a maximum height that fits the content */
+  grid-gap: 10px; /* Set the gap between grid cells to 10px */
+  max-width: 960px; /* Set the maximum width of the container to 960px */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Define the grid position of the first item */
+#item01 {
+  grid-column-start: 1; /* Start the item at the first column */
+
+  grid-column-end: 3; /* End the item at the third column */
+  /* grid-column: 1 / 3; */ /* Alternative way to define the start and end column */
+}
+
+/* Define the grid position of the second item */
+#item02 {
+  grid-column: 3 / 11; /* Start the item at the third column and end it at the eleventh column */
+}
+
+/* Define the grid position of the third item */
+#item03 {
+  grid-column: 1 / 4; /* Start the item at the first column and end it at the fourth column */
+  grid-row: 2 / 5; /* Start the item at the second row and end it at the fifth row */
+}
+
+/* Define the grid position of the fourth item */
+#item04 {
+  grid-column: 4 / 11; /* Start the item at the fourth column and end it at the eleventh column */
+  grid-row: 2 / 5; /* Start the item at the second row and end it at the fifth row */
+}
