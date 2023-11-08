@@ -3,19 +3,16 @@ const hiddenWordHTML = document.getElementById('hiddenWord');
 const wrongLettersHTML = document.getElementById('wrongLetters');
 const pickLetterHTML = document.getElementById('pickLetter');
 
-// Búum til lista af orðum
-const words = ['javascript', 'programming', 'code', 'computer', 'geek'];
-
 // Búum til breytur sem við notum í forritinu
 let wordPicked = '';
-let wrongLetters = [];
 let letterPicked = '';
-
+let hiddenWord = '';
+let wrongLetters = [];
+const words = ['javascript', 'programming', 'code', 'computer', 'geek'];
 
 function pickWord(wordArray) {
   // Fall sem fer í gegnum wordArray listann og velur random orð úr honum
   // og skilar því orði sem var valið út úr fallinu.
-  // Fallið virkar núna, fær random orð úr listanum sem er sendur inn
   tempWordPicked = wordArray[Math.floor(Math.random() * words.length)];
   return tempWordPicked;
 }
@@ -23,29 +20,53 @@ function pickWord(wordArray) {
 function createHiddenWord(wordPicked) {
   // Fall sem tekur inn orðið sem var valið út úr pickWord fallinu og
   // býr til hiddenWord sem er með undirstrikum í stað bókstafa.
-  // Fallið virkar núna, býr til hiddenWord með stjörnum
-  console.log(wordPicked);
   let tempHiddenWord = '';
   for (let i = 0; i < wordPicked.length; i++) {
-    tempHiddenWord += '_ ';
+    tempHiddenWord += '_';
   }
   return tempHiddenWord;
 }
 
 function displayWrongLetters(tempLetter) {
   // Fall sem tekur inn staf sem var valinn og birtir hann í HTML skjalinu.
-  // Fallið virkar núna, birtir stafinn sem var valinn í HTML skjalinu
   wrongLettersHTML.innerHTML += tempLetter;
+  return tempLetter;
+}
+
+function revealLetter(tempLetterPicked, tempWordPicked, tempHiddenWord) {
+  for (let i = 0; i < tempWordPicked.length; i++) {
+    if (tempWordPicked[i] === tempLetterPicked) {
+      tempHiddenWord = tempHiddenWord.substr(0, i) + 
+      tempLetterPicked + tempHiddenWord.substr(i + 1);
+    }
+  }
+  return tempHiddenWord;
 }
 
 pickLetterHTML.addEventListener('keyup', function(event) {
   // Fall sem hlustar á lykla sem ýtt er á og skilar þeim lykli sem var ýtt á.
-  // Fallið virkar núna, skilar lyklinum sem var ýtt á
   let tempLetter = event.key;
+  tempLetter = tempLetter.toLowerCase();
+  // check if tempLetter is in the alphabet
+  if (tempLetter < 'a' || tempLetter > 'z') {
+    alert('Please enter a letter');
+    pickLetterHTML.value = '';
+    return;
+  }
+  // check if tempLetter has already been picked
+  if (wrongLetters.includes(tempLetter)) {
+    alert('You have already picked that letter');
+    pickLetterHTML.value = '';
+    return;
+  }
+  hiddenWord = revealLetter(tempLetter, wordPicked, hiddenWord);
+  hiddenWordHTML.innerHTML = hiddenWord;
   pickLetterHTML.value = '';
-  displayWrongLetters(tempLetter);
+  wrongLetters.push(displayWrongLetters(tempLetter));
   return;
 });
 
+// keyrt upp í byrjun þegar skjalið fer í gang og ekki aftur
 wordPicked = pickWord(words);
-hiddenWordHTML.innerHTML = createHiddenWord(wordPicked);
+hiddenWord = createHiddenWord(wordPicked);
+hiddenWordHTML.innerHTML = hiddenWord;
