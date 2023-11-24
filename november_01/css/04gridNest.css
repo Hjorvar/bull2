@@ -11,7 +11,7 @@
 /* Define a grid for the images */
 #images {
   display: grid; /* Use CSS Grid Layout */
-  grid-template-columns: 1fr 1fr; /* Create 2 equal-width columns */
+  grid-template-columns: 3fr 3fr; /* Create 2 equal-width columns */
   grid-gap: 5px; /* Set the gap between grid cells to 5px */
 }
 

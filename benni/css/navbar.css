@@ -1,0 +1,29 @@
+#nav {
+  background-color: tomato;
+  height: 100px;
+}
+
+/* Notaði gervigreind til að hjálpa mér að staðsetja listann */
+ul {
+  text-decoration: none;
+  text-align: center;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  line-height: 100px; 
+}
+
+/* Notaði gervigreind til að hjálpa mér að raða listanum */
+li a {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+/* Notaði gervigreind til að hjálpa mér að skilja hover og hluti tengda því */
+a:hover {
+  cursor: pointer;
+}

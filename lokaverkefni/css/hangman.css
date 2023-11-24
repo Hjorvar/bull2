@@ -1,0 +1,58 @@
+#container {
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, minmax(100px, auto)); 
+  grid-row-gap: 10px; 
+  max-width: 960px; 
+  margin: 0 auto; 
+  grid-template-areas: 
+    "nav nav nav nav"
+    "header header header header"
+    "hiddenWord hiddenWord hiddenWord hiddenWord"
+    "writeLetter writeLetter writeLetter writeLetter"
+    "wrongLetters wrongLetters wrongLetters wrongLetters"
+    "footer footer footer footer";
+    height: 100vh; 
+}
+
+#navbarContainer {
+  grid-area: nav;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-gap: 5px; 
+}
+
+#navbarContainer > div {
+  background-color: #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+#heading {
+  grid-area: header;
+  background-color: blueviolet;
+}
+
+#hiddenWord {
+  grid-area: hiddenWord;
+  background-color: coral;
+}
+#writeLetter {
+  grid-area: writeLetter;
+  background-color: goldenrod;
+}
+#wrongLetters {
+  grid-area: wrongLetters;
+  background-color: yellow;
+}
+
+#footer {
+  grid-area: footer;
+  background-color: darkcyan;
+}
+
+html, body { /* added this block */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

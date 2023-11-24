@@ -7,4 +7,3 @@ document.addEventListener('load', function() {
 
   characterNameHtml.innerHTML = `<img src="images/${characterNames[randomNumber]}.jpg">` ;
 });
-
