@@ -43,6 +43,19 @@ function revealLetter(tempLetterPicked, tempWordPicked, tempHiddenWord) {
   return tempHiddenWord;
 }
 
+function checkWinAndRefresh(hiddenWord) {
+  // Check if hiddenWord contains any underscores
+  if (!hiddenWord.includes('_')) {
+      // If not, the user has won
+      alert("You won!!!!");
+
+      // Refresh the page after 10 seconds
+      setTimeout(function() {
+          location.reload();
+      }, 5000);
+  }
+}
+
 pickLetterHTML.addEventListener('keyup', function(event) {
   // Fall sem hlustar á lykla sem ýtt er á og skilar þeim lykli sem var ýtt á.
   let tempLetter = event.key;
@@ -63,6 +76,7 @@ pickLetterHTML.addEventListener('keyup', function(event) {
   hiddenWordHTML.innerHTML = hiddenWord;
   pickLetterHTML.value = '';
   wrongLetters.push(displayWrongLetters(tempLetter));
+  checkWinAndRefresh(hiddenWord);
   return;
 });
 
