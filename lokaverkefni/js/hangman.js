@@ -8,7 +8,9 @@ let wordPicked = '';
 let letterPicked = '';
 let hiddenWord = '';
 let wrongLetters = [];
-const words = ['javascript', 'programming', 'code', 'computer', 'geek'];
+const words = ['javascript',  'programming', 'code', 
+                'computer',   'geek',       'gamer',
+                'developer',  'website',    'application'];
 
 function pickWord(wordArray) {
   // Fall sem fer í gegnum wordArray listann og velur random orð úr honum
@@ -49,7 +51,7 @@ function checkWinAndRefresh(hiddenWord) {
       // If not, the user has won
       alert("You won!!!!");
 
-      // Refresh the page after 10 seconds
+      // Refresh the page after 5 seconds
       setTimeout(function() {
           location.reload();
       }, 5000);
@@ -72,6 +74,7 @@ pickLetterHTML.addEventListener('keyup', function(event) {
     pickLetterHTML.value = '';
     return;
   }
+
   hiddenWord = revealLetter(tempLetter, wordPicked, hiddenWord);
   hiddenWordHTML.innerHTML = hiddenWord;
   pickLetterHTML.value = '';
